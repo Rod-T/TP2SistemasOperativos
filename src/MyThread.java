@@ -38,7 +38,6 @@ public class MyThread extends Thread {
         Population population = new Population(params);
 
         do{
-
             count ++;
             resTime = System.currentTimeMillis();
 
@@ -56,8 +55,7 @@ public class MyThread extends Thread {
                     ind = individual;
                 }
             }
-
-            data.writeData(ind,finalResTime,count);
         } while (MyThread.time < maxTime && count < maxIterations);
+        data.writeData(ind,finalResTime,count);
     }
 }

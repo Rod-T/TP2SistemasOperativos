@@ -7,13 +7,13 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-       /* String file = args[0];
-        int threads = args[1];
-        int maxTime = args[2];*/
+        /*String file = args[0];
+        int threads = Integer.parseInt(args[1]);
+        int maxTime = Integer.parseInt(args[2]);*/
 
-        String file = "prob08_1.txt";
-        int threads = 4;
-        int maxTime = 10000;
+        String file = "prob03.txt";
+        int threads = 10;
+        int maxTime = 2000;
 
         Parameters params = Parameters.readfile(file);
         MyThread.maxTime = maxTime;
@@ -31,7 +31,9 @@ public class Main {
                 for (int j = 0; j < threads; j++) {
                     myThreads.add(new MyThread(params));
                     myThreads.get(j).start();
+                }
 
+                for (int j = 0; j < threads; j++) {
                     myThreads.get(j).join();
                 }
 

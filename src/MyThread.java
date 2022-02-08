@@ -7,10 +7,8 @@ public class MyThread extends Thread {
     static Parameters params;
     static SavedData data;
 
-    static long time;
+    long time;
     static long maxTime;
-
-    static int maxIterations = 20000;
 
     /**
      * Builder for MyThread
@@ -27,35 +25,39 @@ public class MyThread extends Thread {
     public void run() {
         Individual ind = new Individual(params);
         ind.setFinalEval(Integer.MAX_VALUE);
-        int count = 0;
+        int iterations = 0;
+        int bestIteration = 0;
 
         long initialTime = System.currentTimeMillis();
         long finalTime;
-        long resTime;
-        long finalResTime;
-        long time;
+        long bestTime = 0;
 
         Population population = new Population(params);
+        for (Individual individual : population.getList()) {
+            if (ind.getFinalEval() > individual.getFinalEval()) {
+                ind.updateInd(individual);
+                bestTime = this.time;
+                bestIteration = iterations;
+            }
+        }
 
         do{
-            count ++;
-            resTime = System.currentTimeMillis();
-
+            iterations++;
             population.generateChilds();
             population.compare();
 
             finalTime = System.currentTimeMillis();
-            time = finalTime;
-
-            MyThread.time = finalTime - initialTime;
-            finalResTime = time - resTime;
+            this.time = finalTime - initialTime;
 
             for (Individual individual : population.getList()) {
                 if (ind.getFinalEval() > individual.getFinalEval()) {
-                    ind = individual;
+                    ind.updateInd(individual);
+                    bestTime = this.time;
+                    bestIteration = iterations;
                 }
             }
-        } while (MyThread.time < maxTime && count < maxIterations);
-        data.writeData(ind,finalResTime,count);
+        } while (this.time < maxTime);
+
+        data.writeData(ind,bestTime,bestIteration);
     }
 }

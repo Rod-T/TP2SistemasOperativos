@@ -11,8 +11,8 @@ public class Main {
         int threads = Integer.parseInt(args[1]);
         int maxTime = Integer.parseInt(args[2]);*/
 
-        String file = "prob03.txt";
-        int threads = 10;
+        String file = "prob08_3.txt";
+        int threads = 4;
         int maxTime = 2000;
 
         Parameters params = Parameters.readfile(file);
@@ -20,7 +20,6 @@ public class Main {
 
         System.out.println("Problem = " + file + " Number threads = " + threads + " Time = " + 10);
         System.out.println(params);
-
 
         try {
             for (int i = 0; i < 10; i++) {
@@ -40,7 +39,7 @@ public class Main {
                 SavedData newData = data.get();
                 System.out.println("------------------------------------- Test " + (i + 1) + " -----------------------------------");
                 System.out.println(newData.bestIndividual.getPlateList());
-                System.out.println("Eval = " + newData.bestIndividual.getFinalEval() + " Best Iteration = " + newData.bestIteration + " Best Time = " + newData.bestTime);
+                System.out.println("Eval = " + newData.bestIndividual.getFinalEval() + " Best Iteration = " + newData.bestIteration + " Best Time = " + (newData.bestTime/1000.0));
             }
         }catch (InterruptedException e){
             e.printStackTrace();

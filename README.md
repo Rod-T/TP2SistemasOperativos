@@ -13,7 +13,7 @@ Sendo:
  - maxComprimento o comprimento da placa, em metros
  - compPecas um vetor cujos elementos representam o comprimento (em metros) das peças a cortar
  - qtddPecas, um vetor cujos elementos representam as quantidades de peças a cortar de cada comprimento definido no vetor compPecas, respeitando a mesma ordem com os seguintes dados iniciais:
-
+ 
  - m = 4
  - maxComprimento = 12
  - compPecas = [3, 4, 5, 6]

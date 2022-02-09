@@ -9,15 +9,15 @@ retângulos ou quadrados cuja largura é a mesma da placa. Ou seja, será apenas
 
 Exemplo:
 Sendo:
- m o número de diferentes comprimentos de peças em que se pretende cortar cada uma das placas
- maxComprimento o comprimento da placa, em metros
- compPecas um vetor cujos elementos representam o comprimento (em metros) das peças a cortar
- qtddPecas, um vetor cujos elementos representam as quantidades de peças a cortar de cada comprimento definido no vetor compPecas, respeitando a mesma ordem com os seguintes dados iniciais:
+ - m o número de diferentes comprimentos de peças em que se pretende cortar cada uma das placas
+ - maxComprimento o comprimento da placa, em metros
+ - compPecas um vetor cujos elementos representam o comprimento (em metros) das peças a cortar
+ - qtddPecas, um vetor cujos elementos representam as quantidades de peças a cortar de cada comprimento definido no vetor compPecas, respeitando a mesma ordem com os seguintes dados iniciais:
 
- m = 4
- maxComprimento = 12
- compPecas = [3, 4, 5, 6]
- qtddPecas = [2, 2, 1, 3]
+ - m = 4
+ - maxComprimento = 12
+ - compPecas = [3, 4, 5, 6]
+ - qtddPecas = [2, 2, 1, 3]
 
 Com esta informação conseguimos saber que se pretende gerar padrões de organização das peças na
 placa, que a placa tem 12m de comprimento, que as peças a cortar possuem quatro comprimentos

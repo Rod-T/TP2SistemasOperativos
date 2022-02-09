@@ -24,9 +24,9 @@ placa, que a placa tem 12m de comprimento, que as peças a cortar possuem quatro
 diferentes (3, 4, 5 e 6 metros), e que pretendemos obter 2 peças de 3m, 2 peças de 4m, 1 peça de
 5m, e 3 peças de 6m.
 
-Lista items : 5 4 6 3 3 4 6 6
-Corte em : | | | |
-Desperdício : 3 0 2 6
+ - Lista items : 5 4 6 3 3 4 6 6
+ - Corte em : | | | |
+ - Desperdício : 3 0 2 6
 
 O algoritmo AJR-E++ pertence à classe dos algoritmos evolutivos, sendo uma versão de um dos
 seus tipos - a Programação Evolutiva (https://en.wikipedia.org/wiki/Evolutionary_programming).
